@@ -106,3 +106,4 @@ D:\Code\Code\WebMVC_Proj\Project\obj\Debug\net10.0\Project.genruntimeconfig.cach
 D:\Code\Code\WebMVC_Proj\Project\obj\Debug\net10.0\ref\Project.dll
 D:\Code\Code\WebMVC_Proj\Project\obj\Debug\net10.0\compressed\ahiv28nna9-{0}-fr7seg8c3y-fr7seg8c3y.gz
 D:\Code\Code\WebMVC_Proj\Project\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+D:\Code\Code\WebMVC_Proj\Project\obj\Debug\net10.0\Project.sourcelink.json

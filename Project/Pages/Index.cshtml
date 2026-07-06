@@ -1,0 +1,105 @@
+﻿@page
+@model IndexModel
+@using System.Security.Claims
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="hero-section">
+    <h1>Xác thực JWT trong ASP.NET Core</h1>
+    <p class="lead">
+        Xây dựng hệ thống đăng nhập, xác thực và phân quyền<br>
+        sử dụng JWT (JSON Web Token) với ASP.NET Core Razor Pages
+    </p>
+</div>
+
+<div class="section-premium">
+    <div class="section-label">Thành viên nhóm</div>
+    <div class="row g-4 justify-content-center">
+        <div class="col-4">
+            <div class="member-card">
+                <div class="member-avatar">👤</div>
+                <h5>Hà Việt Anh</h5>
+                <div class="member-id">MSV: BCS240005</div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="member-card">
+                <div class="member-avatar">👤</div>
+                <h5>Nguyễn Quang Minh</h5>
+                <div class="member-id">MSV: BCS240030</div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="member-card">
+                <div class="member-avatar">👤</div>
+                <h5>Đặng Minh Quân</h5>
+                <div class="member-id">MSV: BCS240038</div>
+            </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-4">
+            <div class="member-card">
+                <div class="member-avatar">👤</div>
+                <h5>Ngô Tuấn Tú</h5>
+                <div class="member-id">MSV: BCS240043</div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="member-card">
+                <div class="member-avatar">👤</div>
+                <h5>Trịnh Đắc Vũ</h5>
+                <div class="member-id">MSV: BCS240047</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section-premium">
+    <div class="section-label">Công nghệ sử dụng</div>
+    <div class="row g-3">
+        <div class="col-md-4">
+            <div class="page-card text-center h-100">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔐</div>
+                <h5 style="font-weight: 600;">JWT Authentication</h5>
+                <p style="color: var(--brand-silver); font-size: 0.85rem; margin-bottom: 0;">
+                    JSON Web Token cho xác thực và phân quyền
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="page-card text-center h-100">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚙️</div>
+                <h5 style="font-weight: 600;">ASP.NET Core 10</h5>
+                <p style="color: var(--brand-silver); font-size: 0.85rem; margin-bottom: 0;">
+                    Framework web hiện đại từ Microsoft
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="page-card text-center h-100">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎨</div>
+                <h5 style="font-weight: 600;">Razor Pages</h5>
+                <p style="color: var(--brand-silver); font-size: 0.85rem; margin-bottom: 0;">
+                    Kiến trúc trang web đơn giản, dễ phát triển
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (User.Identity?.IsAuthenticated == true)
+{
+    var role = User.FindFirst(ClaimTypes.Role)?.Value ?? "user";
+    <div class="section-premium">
+        <div class="section-label">Thông tin đăng nhập</div>
+        <div class="page-card">
+            <p class="mb-1"><strong>Username:</strong> @User.Identity.Name</p>
+            <p class="mb-0">
+                <strong>Vai trò:</strong>
+                <span class="badge-role">@role</span>
+            </p>
+        </div>
+    </div>
+}
+
